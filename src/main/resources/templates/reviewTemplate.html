@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title th:text="${reviewModel.title}">Cruise ship reviews</title>
+    <link rel="stylesheet" type="text/css" href="./css/reviewStyle.css">
+</head>
+
+<body>
+<div>
+
+    <nav>
+        <a href="/reviews">
+            <img src="images\title.jpg"></a>
+    </nav>
+
+    <main>
+        <h2 th:text="${reviewModel.title}"></h2>
+        <h3 th:text="${reviewModel.reviewCategory}"></h3>
+        <div class="ReviewContent">
+            <p th:text="${reviewModel.reviewContent}"></p>
+        </div>
+        <div class="flip-image">
+            <div class="flip-image-inner">
+                <div class="flip-image-front">
+                    <img th:src="${reviewModel.imageUrl}">
+                </div>
+                <div class="flip-image-back">
+                    <img th:src="${reviewModel.imageFlipUrl}">
+                </div>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<footer>
+    <small>&copy Yuli McElroy 2021</small>
+</footer>
+
+</body>
+</html>

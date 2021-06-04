@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>2021 Cruise Ships Reviews</title>
+    <link rel="stylesheet" type="text/css" href="./css/reviewsStyle.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <h1><img src="images\title.jpg"></h1>
+            <p>2021 Cruise reviews have arrived! Here are a list of the cruise lines recommended by Yuli McElroy. Yuli graduated from Hawaii Pacific University majoring in Travel Industry Management. She formerly worked as a tour planner at a local tour agent in Honolulu, Hawaii, and a travel specialist at Priceline.com in Columbus, Ohio.
+                Her travel and hospitality knowledge of the cruise lines are leveraged to present you the Top 2021 Cruise Line Reviews. <br> Go sea the world!!!</p>
+        </header>
+
+        <main>
+            <div th:each="review: ${reviewsModel}">
+                <a th:href="@{/review(id=${review.id})}">
+                <img th:src="${review.imageUrl}"></a>
+            <p th:text="${review.title}"></p>
+            </div>
+        </main>
+    </div>
+
+<footer>
+    <small>&copy Yuli McElroy 2021</small>
+</footer>
+
+</body>
+</html>
